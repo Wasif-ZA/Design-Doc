@@ -1,0 +1,40 @@
+# This workflow creates a PDF from the for file SDD.md. Use at own risk.
+
+name: Convert Markdown to PDF
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3  
+      
+    - name: Install pandoc
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y pandoc texlive-xetex
+        sudo npm install -g mermaid-filter
+       
+        
+    - name: Convert Markdown to PDF
+      run: |
+        cd deliverables/
+        pandoc SDD.md  -f markdown -o SDD.pdf --filter=mermaid-filter
+    - name: Upload PDF to repo
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add deliverables/SDD.pdf
+        git commit -m "Added generated PDF for SDD"
+        git push
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
