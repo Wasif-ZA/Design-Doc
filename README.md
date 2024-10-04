@@ -1,53 +1,59 @@
-# Assignment 2
+# Design Doc
 
-There are two linked assignments. Assignment 1 and Assignment 2. The aim of these assignments is to get you to investigate a problem area while clearly and succinctly describing the problems and also proposing a solution. A lot of the assignment time will involve investigation, discussion and some research rather than coding / writing - in fact, there will be little to no coding.
+## Project Overview
 
-## Premise (SDD team)
+**Design Doc** is a project completed at **Macquarie University** where I worked on the **Implementation Planning** and **Initial Design** of a large software system. The focus was to create a clear and detailed **Software Design Document (SDD)** based on a set of requirements. The project was more about planning and design, just like in real-world software development when you need to figure out how things will work before you start building.
 
-You have been made responsible for developing the Implementation Planning and Initial Design for a major software project. You have access to a fairly detailed requirements document and if necessary the authors of that document (the SRs team).  This simulates a common situation in software development -- someone has spent time preparing the requirements documentation, and now you need to take that document and plan the implementation. Your task is to develop parts of a detailed implementation planning document, a detailed plan for how you would test the software, and the beginning of the project plan.
+## What I Worked On
 
-## Stakeholders (SRS team)
-You are now the stakeholders of this other project. And of course, the authors of the SRS that the SDD team is using. So, please help the SDD team by providing them with all the necessary resources. Please respond to any request for clarification.
+### 1. **System Architecture**
+I designed a system that can grow over time without breaking things. It’s made up of three parts:
+- **Presentation Layer**: This is what users interact with.
+- **Business Logic Layer**: This handles all the rules and main processes.
+- **Data Layer**: This takes care of storing and retrieving data securely and efficiently.
+
+### 2. **Implementation Strategy**
+I helped create a plan for how to build the project, from start to finish. This plan included:
+- Milestones and timelines so we knew what to work on and when.
+- Prioritizing tasks to stay focused on what matters most.
+- A clear path that balances technical and business needs.
+
+### 3. **Testing Plan**
+To make sure everything works as expected, I came up with a testing plan:
+- **Unit Testing**: To check that each small part of the system works.
+- **Integration Testing**: To make sure the different parts work well together.
+- **Performance Testing**: To see how the system performs under pressure.
+- **User Acceptance Testing**: To make sure it meets the users' needs.
+
+### 4. **Technology Stack**
+We chose tools that made sense for the project:
+- **Backend**: Django or Flask for handling the core logic and APIs.
+- **Frontend**: React.js for a smooth and responsive interface.
+- **Database**: PostgreSQL for solid, reliable data management.
+
+## Project Phases
+
+1. **Design Phase**: Finalized the system’s structure and picked the right tools for the job.
+2. **Development Phase**: Planned using agile sprints for incremental progress and feedback.
+3. **Testing and Deployment**: Put the system through thorough testing and then deployed it.
+
+## Challenges and Solutions
+
+- **Ambiguous Requirements**: When some parts of the requirements weren't clear, I made smart assumptions, documented them, and confirmed with the team.
+- **Balancing Performance and Scalability**: We used caching to boost performance and made sure the system could scale as needed.
 
 ## Deliverables
 
-### SDD team 
-As a member of the team of the SDD team, we expect you to:
- * As a team write an SDD document. A PDF version has to be uploaded on iLearn. Note, for assignment 2 we will use the peer assessment feature of iLearn to scale the marks.
- * Prepare a group presentation of about 5 minutes. Presentations will take place in week 13. Upload the slide deck to the deliverables folder. A copy has to be uploaded on iLearn.
- * Complete the individual reflection on iLearn. 
+1. **Software Design Document (SDD)**: Detailed architecture, diagrams, and the implementation plan.
+2. **Test Plan**: A comprehensive testing strategy for functionality, integration, and performance.
+3. **Project Presentation**: A short presentation covering the design, technology stack, and testing approach.
 
-### Stakeholder (SRS team)
-As a stakeholder for the other project, we expect you to:
- * Cooperate with the other team, and respond to their questions.
- * Hand over any resource they may need from your SRS repo.
+## Key Takeaways
 
-## Resources
-Please use and read the following
-* The file [project-description.md](project-description.md) for the *project description*. **NOTE: PLEASE READ AND USE  THIS ONE.**
-* The file [SDD.md](deliverables/SDD.md) for the SDD.
-* The folder [deliverables](deliverables/) for uploading your presentation slides.
-* The folder [third-party-resources](third-party-resources/) to record and document any third-party resource.
-* The folder [minutes](minutes/) to keep minutes of the meeting with the stakeholders and other important meetings.
+- **Collaboration**: Worked closely with the team and stakeholders to keep everything aligned.
+- **Architectural Planning**: Gained experience designing systems that can scale and evolve.
+- **Testing Focus**: Made sure testing was planned early to catch any issues before development.
 
-## How to work with the provided SRS
-An SRS should ensure that requirements are correct, feasible, prioritised, verifiable, complete, uniquely identifiable, consistent, modifiable and traceable. Of course, not every SRS is perfect (in fact, almost no SRS is really perfect!) and you may need to make some careful choices about what to do about imperfections. 
+---
 
-If there are very very many requirements provided for you, then in assignment 2 you should probably pick one group of requirements in the provided SRS and outline an implementation and test plan for those. Be sure to think about the different types of tests you can perform for functional and non-functional requirements and choose a broad enough set of requirements.
-
-On the other hand, if your partner provides you with a document with relatively ill-defined requirements, you will need to do your best to work with what you have, and if necessary extend the requirements. And you may (not) be surprised that this also happens in real life.
-
-You may be asking "What do you really want us to do?" There is a great deal of room for creativity, just like with assignment 1. This isn't a find-the-right-answer assignment, and also not a "where are the precise guidelines" type of assignment. It's a mixture of studying carefully what information and specifications you do have and thinking creatively about the problems you have been presented with. There are many different good answers that you as a team could come up with. And that can make the job very interesting and very much fun.
-
-However, try to be as realistic as you can. Creativity is not about wild fantasies. But problem statements will never cover all the details that you might care about. You, and your team, are free to make reasonable assumptions about things. Make sure that they are reasonable, and state them clearly in your submissions so that the marker can understand. And before you start making assumptions, be sure that you've done all you can to find out how things you are wondering about really do work in the real world.
-
-
-
-
-
-
-
-
-
-
-
+**Design Doc** shows my ability to lead the design phase of a project, create a solid system architecture, and plan for both functionality and scalability.
