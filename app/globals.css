@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-cloud text-midnight antialiased;
+}
+
+main {
+  @apply pb-16;
+}

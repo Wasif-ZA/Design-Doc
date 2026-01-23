@@ -46,6 +46,21 @@ The system architecture is designed to efficiently track and promote the use of 
 - Cup Tracking Services: Responsible for tracking the real-time location and status of RFID-enabled cups.
 - Transaction Processing: This service manages the processing of user orders. It ensures that cups are available, processes orders, and coordinates with partner locations for cup pickup and return.
 
+### System Gaps and Mitigations (MVP Review)
+
+1. **Offline scanner reconciliation**
+	- Gap: RFID scanners can queue scans locally when offline, which risks double-counting or delayed inventory updates.
+	- Mitigation: Use a reconciliation job that merges queued scans, de-duplicates by RFID tag + timestamp, and flags conflicts for review.
+2. **RFID interference at metal surfaces**
+	- Gap: Pilot locations with stainless counters show lower read accuracy.
+	- Mitigation: Adjust scanner placement, add shielding, or use antenna tuning kits for high-interference locations.
+3. **Cleaning turnaround visibility**
+	- Gap: The current model tracks status but not cleaning SLAs, so cups can stall in the cleaning loop.
+	- Mitigation: Add timestamped wash/inspect events and alerts for cups exceeding 24 hours in cleaning.
+4. **Inventory drift between scans**
+	- Gap: Cups moved without a scan can cause inventory drift.
+	- Mitigation: Require daily spot audits and allow manual corrections with audit trails.
+
 ### RFID Infrastructure:
 
 The RFID infrastructure includes the hardware components necessary for tracking the RFID-enabled cups. This infrastructure consists of:
@@ -733,6 +748,5 @@ The next steps for the development of the reusable coffee cup tracking system wi
 ## Note
 
 > Do not forget that we also expect you to complete an individual reflection on iLearn
-
 
 
