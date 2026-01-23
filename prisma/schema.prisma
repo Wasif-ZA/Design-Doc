@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model CoffeeShop {
+  id           String        @id @default(cuid())
+  name         String
+  location     String
+  inventory    Int
+  subscription Subscription?
+  scanEvents   ScanEvent[]
+  serviceTasks ServiceTask[]
+  updatedAt    DateTime      @updatedAt
+}
+
+model Subscription {
+  id          String     @id @default(cuid())
+  status      String
+  allocated   Int
+  startDate   DateTime
+  endDate     DateTime
+  loyalty     Int
+  coffeeShop  CoffeeShop @relation(fields: [coffeeShopId], references: [id])
+  coffeeShopId String    @unique
+}
+
+model Cup {
+  id            String     @id @default(cuid())
+  rfidTag       String     @unique
+  status        String
+  lastSeenAt    DateTime
+  lastSeenAtLoc String
+  scanEvents    ScanEvent[]
+}
+
+model ScanEvent {
+  id         String     @id @default(cuid())
+  action     String
+  notes      String
+  scannedAt  DateTime
+  cup        Cup        @relation(fields: [cupId], references: [id])
+  cupId      String
+  coffeeShop CoffeeShop @relation(fields: [coffeeShopId], references: [id])
+  coffeeShopId String
+}
+
+model ServiceTask {
+  id         String     @id @default(cuid())
+  action     String
+  priority   String
+  scheduled  DateTime
+  coffeeShop CoffeeShop @relation(fields: [coffeeShopId], references: [id])
+  coffeeShopId String
+}
+
+model CollectionPoint {
+  id       String @id @default(cuid())
+  name     String
+  location String
+  capacity Int
+}

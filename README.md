@@ -57,3 +57,13 @@ We chose tools that made sense for the project:
 ---
 
 **Design Doc** shows my ability to lead the design phase of a project, create a solid system architecture, and plan for both functionality and scalability.
+
+## MVP Demo (Next.js 16 + Tailwind + Prisma + Framer Motion)
+
+This repo now includes a polished MVP web dashboard built with Next.js 16 (canary), Tailwind, Prisma (schema only), and Framer Motion. The UI surfaces inventory, service tasks, scan activity, architecture decisions, and the system gaps called out in the SDD.
+
+**How to run the demo:**
+1. Install dependencies: `npm install`
+2. (Optional) Generate Prisma client: `npm run prisma:generate`
+3. Start the dev server: `npm run dev`
+4. Open `http://localhost:3000`
